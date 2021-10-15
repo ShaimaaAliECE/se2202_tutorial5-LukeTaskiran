@@ -26,9 +26,13 @@ function takeCell (event) {
     event.target.disabled = true;
 
 
-    if (nextPlayer == 'X') nextPlayer = 'O';
+    if (nextPlayer == 'X') {
+
+
+    nextPlayer = 'O';
+    }
     else nextPlayer = 'X';
-    nextPlayerLabel.innerText = " " + nextPlayer;
+    nextPlayer2.innerText = " " + nextPlayer;
 
     if (isGameOver()) {
         let h1 = document.createElement("h1");
@@ -42,14 +46,17 @@ function takeCell (event) {
 function isGameOver() {// This function returns true if all the buttons are disabled and false otherwise 
 
 
-    let gameover = 0;
-    for (let i = 0; i < btns.length; i++) {
-        if (btns[i].gameover) {
-            gameover++;
+    function isGameOver() {
+
+        let disabled = 0;
+        for (let i = 0; i < btns.length; i++) {
+            if (btns[i].disabled) {
+                disabled++;
+            }
         }
+        if (disabled == 9) {
+            return true;
+        }
+        return false;
     }
-    if (gameover == 9) {
-        return true;
-    }
-    return false;
 }
