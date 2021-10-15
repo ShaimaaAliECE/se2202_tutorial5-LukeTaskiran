@@ -7,7 +7,7 @@ createGameBoard()
 function createGameBoard() {
     let tictactoecells = document.getElementsByTagName('td')
     
-    for (let i = 0; i < cells.length; i++) {
+    for (let i = 0; i < tictactoecells.length; i++) {
 
 
         let btn0 = document.createElement('button')
