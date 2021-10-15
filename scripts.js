@@ -12,7 +12,7 @@ function createGameBoard() {
 
         let btn0 = document.createElement('button')
         btn0.innerText = "[ ]"
-        tictactoecells[i].appendChild(btn)
+        tictactoecells[i].appendChild(btn0)
     }
 }
 // Programatically add 'takeCell' as an event listener to all the buttons on the board
